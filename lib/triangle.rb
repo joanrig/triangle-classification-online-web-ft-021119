@@ -22,9 +22,9 @@ class Triangle
 
   def kind
     if valid?
-      if @side1 == @side2 && @side2 == @side3
+      if @side1 == @side2 && @side2 == @side3#(@sides.uniq == 1)
         :equilateral
-      elsif @sides.detect{|side| @sides.count(side) > 1 }
+      elsif @sides.find{|side| @sides.count(side) > 1 }
         :isosceles
       else
         :scalene
